@@ -3,6 +3,23 @@ import {TicketItem} from './ticketItem';
 console.log("Compiling Person");
 import {AuthenticatedPrincipal} from "amorphic-userman";
 
+// Start angular stuff
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'person',
+    template: `
+    <td>{{getFullName()}}</td>
+    <td>{{email}}</td>
+    <td>
+        <div *ngIf="role === 'admin'">
+            <select>{{role}}</select>
+            <a (click)="remove()">Delete</a>
+        </div>
+    </td>
+  `
+})
+
 @supertypeClass
 export class Person extends AuthenticatedPrincipal {
 

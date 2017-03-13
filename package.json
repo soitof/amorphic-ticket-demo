@@ -10,6 +10,20 @@
     "compile:ts": "./node_modules/typescript/bin/tsc"
   },
   "dependencies": {
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/router": "~3.4.0",
+    "@angular/upgrade": "~2.4.0",
+    "angular-in-memory-web-api": "~0.2.4",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4",
+
     "amorphic": "https://github.com/selsamman/amorphic.git#d80ac3090b7e7fbc2875b2da1e96b3bc8010e8df",
     "amorphic-userman": "https://github.com/selsamman/amorphic-userman.git#133b699770c87c8d0f4b2866e71dce666c4a8cde",
     "underscore": "1.x",

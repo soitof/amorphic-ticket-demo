@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://bindster.com" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="en" lang="en">
 
 <head>
+    <base href="/">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="Amorphic sample application">
@@ -37,48 +38,9 @@
 
 </head>
 
-<body style="visibility:hidden;">
-
-    <!--#include virtual="inc/mappers.html" -->
-    <!--#include virtual="inc/messages.html" -->
-
-    <b:include url="menu.html"></b:include>
-
-    <div class="container" id="container" style="margin-top: 50px">
-
-        <!-- HOME PAGE GOES HERE WHERE SEARCH ENGINES WILL SEE IT -->
-
-        <b:if test="!file">
-
-            <div b:showif="loggedIn" class="page-header">
-
-                <h1>Hey <span b:bind="loggedInPerson.firstName"></span></h1>
-                <p>
-                    Welcome to the Amorphic Ticket Demo
-                </p>
-
-            </div>
-
-            <div b:showif="!loggedIn" class="page-header">
-                <h1>Welcome to the Amorphic Ticket Demo</h1>
-                <p>
-                    Amorphic is an open source project on
-                    <a href="https://github.com/selsamman/amorphic" target="_blank">github</a>
-                </p>
-            </div>
-
-            <div style="text-align: center;color: red;margin-top: 20px" b:bind="error"></div>
-
-        </b:if>
-
-        <b:if test="file">
-            <b:include url="{file}"></b:include>
-        </b:if>
-
-    </div>
-
+<body>
+    <menu></menu>
     <!--#include virtual="inc/mocha.html" -->
     <script src="modules/amorphic-bindster/bindster-amorphic.js"></script>
-
 </body>
 </html>

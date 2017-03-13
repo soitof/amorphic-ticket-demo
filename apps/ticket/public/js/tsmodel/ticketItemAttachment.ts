@@ -1,6 +1,10 @@
 import {Supertype, supertypeClass, property, remote} from 'amorphic';
 import {TicketItem} from './ticketItem';
 console.log("Compiling TicketItemAttachment");
+
+
+
+
 @supertypeClass
 export class TicketItemAttachment extends Supertype {	// = objectTemplate.create("TicketItemAttachment",
     @property()

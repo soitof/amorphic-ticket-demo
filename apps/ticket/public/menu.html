@@ -1,25 +1,28 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <ul class="nav navbar-nav" b:showif="!loggedIn">
-        <li><a href="#" b:onclick="route.public.home()">Home</a></li>
-        <li b:showif="!loggedIn"><a href="#" b:onclick="route.public.login()">Login</a></li>
-        <li><a href="#" b:onclick="route.public.registration()">Register</a></li>
-        <li b:showif="loggedIn"><a href="#" b:onclick="logout()">Logout</a></li>
-        <li><a href="#" b:onclick="runTests">Tests</a></li>
+    <ul class="nav navbar-nav" [hidden]="loggedIn">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/login">Login</a></li>
+        <li><a routerLink="/registration">Register</a></li>
     </ul>
-    <ul class="nav navbar-nav" b:showif="loggedIn">
-        <li><a href="#" b:onclick="route()">Home</a></li>
-        <li><a href="#" b:onclick="route.private.tickets()">Tickets</a></li>
-        <li><a href="#" b:onclick="route.private.projects()">Projects</a></li>
-        <li><a href="#" b:onclick="route.private.people()">People</a></li>
+    <ul class="nav navbar-nav" [hidden]="!loggedIn">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/tickets">Tickets</a></li>
+        <li><a routerLink="/projects">Projects</a></li>
+        <li><a routerLink="/route.private.people">People</a></li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello <span b:bind="loggedInPerson.firstName"></span><b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello <span>{{loggedInPerson.firstName}}</span><b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="#" b:onclick="logout()">Logout</a></li>
-                <li><a href="#" b:onclick="route.private.change_email()">Change email</a></li>
-                <li><a href="#" b:onclick="route.private.change_password()">Change Password</a></li>
-                <li b:showif="isAdmin()"><a href="#" b:onclick="deleteAll()">Clear Database</a></li>
+                <li><a (click)="logout()">Logout</a></li>
+                <li><a routerLink="/change_email">Change email</a></li>
+                <li><a routerLink="/change_password">Change Password</a></li>
+                <li [hidden]="!isAdmin()"><a (click)="deleteAll()">Clear Database</a></li>
             </ul>
         </li>
     </ul>
 </nav>
+<div class="container" id="container" style="margin-top: 50px">
+
+    <!-- HOME PAGE GOES HERE WHERE SEARCH ENGINES WILL SEE IT -->
+    <router-outlet></router-outlet>
+</div>
 
