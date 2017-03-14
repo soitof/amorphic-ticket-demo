@@ -3,7 +3,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
-import {Controller} from './controller';
+import AmorphicService from 'amorphic.service';
+import Menu from 'menu.component';
+import PeopleComponent from 'people.component';
+import ProjectComponent from 'project.component';
+import ProjectsComponent from 'projects.component';
+import TicketComponent from 'ticket.component';
+import TicketsComponent from 'tickets.component';
 
 @NgModule({
     imports: [
@@ -30,15 +36,18 @@ import {Controller} from './controller';
         ])
     ],
     declarations: [
-        Controller,
-        HeroDetailComponent,
-        HeroesComponent
+        Menu,
+        TicketComponent,
+        TicketsComponent,
+        PeopleComponent,
+        ProjectComponent,
+        ProjectsComponent
     ],
     providers: [
-        HeroService
+        AmorphicService
     ],
     bootstrap: [
-        Controller
+        Menu
     ]
 })
 export class AppModule {

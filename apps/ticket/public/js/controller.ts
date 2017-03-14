@@ -13,6 +13,9 @@ var forceImport = TicketItemComment;
 declare var AmorphicRouter : any;
 declare var ticketRoutes : any;
 
+// Start angular stuff
+import {Component} from '@angular/core';
+
 @Component({
     selector: 'menu',
     templateUrl: '../html_templates/menu.html'
