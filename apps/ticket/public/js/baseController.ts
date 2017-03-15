@@ -359,15 +359,7 @@ export class BaseController extends AuthenticatingController {
 		try {
 			return new XMLHttpRequest();
 		} catch (e) {
-			try {
-				return new ActiveXObject("Msxml2.XMLHTTP");
-			} catch (e2) {
-				try {
-					return new ActiveXObject("Microsoft.XMLHTTP");
-				} catch (e3) {
-					throw 'No support for XMLHTTP';
-				}
-			}
+			throw 'No support for XMLHTTP';
 		}
 	};
     loadScript (src, then) {

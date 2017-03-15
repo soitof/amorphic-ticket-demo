@@ -28,7 +28,7 @@
     "amorphic-userman": "https://github.com/selsamman/amorphic-userman.git#133b699770c87c8d0f4b2866e71dce666c4a8cde",
     "underscore": "1.x",
     "q": "*",
-    "reflect-metadata": "^0.1.9",
+    "reflect-metadata": "^0.1.10",
     "@types/q": "*",
     "@types/underscore": "*",
     "@types/node": "^7.0.5"
@@ -45,7 +45,9 @@
     "typescript": "^2.1.6",
     "webpack": "^2.2.1",
     "webpack-node-externals": "^1.5.4",
-    "webpack-stream": "^3.2.0"
+    "webpack-stream": "^3.2.0",
+    "angular2-template-loader": "0.6.2",
+    "html-loader": "0.4.5"
   },
   "bundledDependencies": []
 }

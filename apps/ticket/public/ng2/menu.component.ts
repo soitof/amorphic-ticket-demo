@@ -1,9 +1,38 @@
-import {Component} from '@angular/core';
-import {AmorphicService} from 'amorphic.service';
+import {Component, OnInit} from '@angular/core';
+import {AmorphicService} from './amorphic.service';
 
 @Component({
     selector: 'menu',
-    templateUrl: '../html_templates/menu.html'
+    //templateUrl: '../html_templates/menu.component.html'
+    template: `
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <ul class="nav navbar-nav" [hidden]="controller.loggedIn">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/login">Login</a></li>
+        <li><a routerLink="/registration">Register</a></li>
+    </ul>
+    <ul class="nav navbar-nav" [hidden]="!controller.loggedIn">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/tickets">Tickets</a></li>
+        <li><a routerLink="/projects">Projects</a></li>
+        <li><a routerLink="/route.private.people">People</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello <span>{{controller.loggedInPerson.firstName}}</span><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a (click)="logout()">Logout</a></li>
+                <li><a routerLink="/change_email">Change email</a></li>
+                <li><a routerLink="/change_password">Change Password</a></li>
+                <li [hidden]="!controller.isAdmin()"><a (click)="deleteAll()">Clear Database</a></li>
+            </ul>
+        </li>
+    </ul>
+    </nav>
+    <div class="container" id="container" style="margin-top: 50px">
+
+        <!-- HOME PAGE GOES HERE WHERE SEARCH ENGINES WILL SEE IT -->
+        <router-outlet></router-outlet>
+    </div>
+    `
 })
 
 export class Menu implements OnInit {
@@ -13,6 +42,6 @@ export class Menu implements OnInit {
     constructor(private amorphic: AmorphicService) {}
 
     ngOnInit(): void {
-        this.controller = this.amorphic.getSession();
+        this.controller = this.amorphic.controller;
     }
 }

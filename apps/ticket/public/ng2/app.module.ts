@@ -3,13 +3,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
-import AmorphicService from 'amorphic.service';
-import Menu from 'menu.component';
-import PeopleComponent from 'people.component';
-import ProjectComponent from 'project.component';
-import ProjectsComponent from 'projects.component';
-import TicketComponent from 'ticket.component';
-import TicketsComponent from 'tickets.component';
+import {AmorphicService} from './amorphic.service';
+import {Menu} from './menu.component';
+import {PeopleComponent} from './people.component';
+import {ProjectComponent} from './project.component';
+import {ProjectsComponent} from './projects.component';
+import {TicketComponent} from './ticket.component';
+import {TicketsComponent} from './tickets.component';
+
+import {Controller} from '../js/controller';
+import {WindowRef} from './window.service';
 
 @NgModule({
     imports: [
@@ -23,19 +26,20 @@ import TicketsComponent from 'tickets.component';
             },
             {
                 path: 'tickets',
-                component: Tickets
+                component: TicketsComponent
             },
             {
                 path: 'people',
-                component: People
+                component: PeopleComponent
             },
             {
                 path: 'projects',
-                component: Projects
+                component: ProjectsComponent
             }
         ])
     ],
     declarations: [
+        Controller,
         Menu,
         TicketComponent,
         TicketsComponent,
@@ -44,6 +48,7 @@ import TicketsComponent from 'tickets.component';
         ProjectsComponent
     ],
     providers: [
+        WindowRef,
         AmorphicService
     ],
     bootstrap: [
