@@ -1,6 +1,5 @@
 import {Supertype, supertypeClass, property, remote} from 'amorphic';
 import {BaseController} from './baseController';
-import {Component} from '@angular/core';
 import {TicketItemComment} from './tsmodel/ticketItemComment';
 import {Ticket} from './tsmodel/ticket';
 import * as Q from 'Q';
@@ -12,11 +11,6 @@ var forceImport = TicketItemComment;
 
 declare var AmorphicRouter : any;
 declare var ticketRoutes : any;
-
-@Component({
-    selector: 'menu',
-    templateUrl: '../html_templates/menu.html'
-})
 
 @supertypeClass
 export class Controller extends BaseController {

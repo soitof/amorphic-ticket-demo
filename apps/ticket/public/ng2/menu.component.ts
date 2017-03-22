@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AmorphicService} from './amorphic.service';
+import {Controller} from '../js/controller';
 
 @Component({
     selector: 'menu',

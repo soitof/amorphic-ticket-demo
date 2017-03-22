@@ -437,17 +437,7 @@ var BaseController = (function (_super) {
             return new XMLHttpRequest();
         }
         catch (e) {
-            try {
-                return new ActiveXObject("Msxml2.XMLHTTP");
-            }
-            catch (e2) {
-                try {
-                    return new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                catch (e3) {
-                    throw 'No support for XMLHTTP';
-                }
-            }
+            throw 'No support for XMLHTTP';
         }
     };
     ;

@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
@@ -12,7 +12,7 @@ import {TicketComponent} from './ticket.component';
 import {TicketsComponent} from './tickets.component';
 
 import {Controller} from '../js/controller';
-import {WindowRef} from './window.service';
+import {WindowService} from './window.service';
 
 @NgModule({
     imports: [
@@ -48,7 +48,7 @@ import {WindowRef} from './window.service';
         ProjectsComponent
     ],
     providers: [
-        WindowRef,
+        WindowService,
         AmorphicService
     ],
     bootstrap: [

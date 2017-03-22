@@ -1,27 +1,38 @@
 var path = require('path');
 var nodeExternals = require('webpack-node-externals');
 module.exports = {
-    //entry: {
-    //    app: './config/app.ts',
-    //    vendor: './config/vendor.ts',
-    //    amorphic: './apps/ticket/public/js/index.ts'
-    //},
-    entry: './apps/ticket/public/js/index.ts',
+    // Angular 2 stuff
+    entry: {
+        //app: './apps/ticket/public/ng2/app.module.ts'
+        //app: './apps/ticket/public/ng2/app.module.ts',
+        client: './apps/ticket/public/ng2/client.module.ts'
+        //vendor: './bundle/vendor.ts',
+        //bundle: './apps/ticket/public/js/index.ts'
+    },
+    // Amorphic
+    //entry: './apps/ticket/public/js/index.ts',
     output: {
-        //filename: '/[name].js',
-        filename: '/bundle.js',
+        filename: '/[name].js',
+        //filename: '/bundle.js',
         path: '/'
     },
     module: {
         rules: [
-            {
-                test: /\.component|service|module\.tsx?$/,
-                loader: ['ts-loader', 'angular2-template-loader']
-            },
+            // Angular 2 stuff
+            //{
+            //    test: /\.component|service|module\.tsx?$/,
+            //    loader: ['awesome-typescript-loader', 'angular2-template-loader']
+            //},
             {
                 test: /\.tsx?$/,
-                loader: 'ts-loader'
+                loader: ['awesome-typescript-loader', 'angular2-template-loader']
             },
+
+            // Amorphic
+            //{
+            //    test: /\.tsx?$/,
+            //    loader: 'ts-loader'
+            //},
             {
                 enforce: 'pre',
                 test: /\.js$/,

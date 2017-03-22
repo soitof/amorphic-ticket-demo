@@ -1,6 +1,6 @@
 {
     "include": [
-        "./apps/**/*",
+        "./apps/ticket/public/js/*",
         "./node_modules/amorphic-userman"
     ],
     "compilerOptions": {
@@ -8,7 +8,7 @@
         "target": "es5",
         "lib": [
             "dom",
-            "es5",
+            "es2015",
             "es2015.promise"
         ],
         "noImplicitAny": false,
