@@ -1,13 +1,15 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Router} from '@angular/router';
 
 import {AmorphicService} from './amorphic.service';
-import {Menu} from './menu.component';
+import {LoginComponent} from './login.component';
+import {MenuComponent} from './menu.component';
 import {PeopleComponent} from './people.component';
 import {ProjectComponent} from './project.component';
 import {ProjectsComponent} from './projects.component';
+import {RegisterComponent} from './register.component';
 import {TicketComponent} from './ticket.component';
 import {TicketsComponent} from './tickets.component';
 
@@ -25,6 +27,10 @@ import {WindowService} from './window.service';
                 pathMatch: 'full'
             },
             {
+                path: 'login',
+                component: LoginComponent
+            },
+            {
                 path: 'tickets',
                 component: TicketsComponent
             },
@@ -35,24 +41,30 @@ import {WindowService} from './window.service';
             {
                 path: 'projects',
                 component: ProjectsComponent
+            },
+            {
+                path: 'registration',
+                component: RegisterComponent
             }
         ])
     ],
     declarations: [
         //Controller,
-        Menu,
+        MenuComponent,
+        LoginComponent,
         TicketComponent,
         TicketsComponent,
         PeopleComponent,
         ProjectComponent,
-        ProjectsComponent
+        ProjectsComponent,
+        RegisterComponent
     ],
     providers: [
         WindowService,
         AmorphicService
     ],
     bootstrap: [
-        Menu
+        MenuComponent
     ]
 })
 export class AppModule {

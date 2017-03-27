@@ -19,7 +19,7 @@ module.exports = {
             // Angular 2 stuff
             {
                 test: /\.tsx?$/,
-                loader: ['awesome-typescript-loader', 'angular2-template-loader']
+                loader: ['ts-loader', 'angular2-template-loader']
             },
 
             // Amorphic

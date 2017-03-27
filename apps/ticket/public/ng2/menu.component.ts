@@ -7,16 +7,16 @@ import {Controller} from '../js/controller';
     //templateUrl: '../html_templates/menu.component.html'
     template: `
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <ul class="nav navbar-nav" [hidden]="controller.loggedIn">
+    <ul class="nav navbar-nav" *ngIf="!controller.loggedIn">
         <li><a routerLink="/home">Home</a></li>
         <li><a routerLink="/login">Login</a></li>
         <li><a routerLink="/registration">Register</a></li>
     </ul>
-    <ul class="nav navbar-nav" [hidden]="!controller.loggedIn">
+    <ul class="nav navbar-nav" *ngIf="controller.loggedIn">
         <li><a routerLink="/home">Home</a></li>
         <li><a routerLink="/tickets">Tickets</a></li>
         <li><a routerLink="/projects">Projects</a></li>
-        <li><a routerLink="/route.private.people">People</a></li>
+        <li><a routerLink="/people">People</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello <span>{{controller.loggedInPerson.firstName}}</span><b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -36,7 +36,7 @@ import {Controller} from '../js/controller';
     `
 })
 
-export class Menu implements OnInit {
+export class MenuComponent implements OnInit {
 
     controller: Controller;
 
