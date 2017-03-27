@@ -27,7 +27,7 @@
     <!--script src="supertype/index.js?ver=0"><--/script-->
     <!--script src="semotus/index.js?ver=0"><--/script-->
     <!--<script src="js/bundle.js"></script>-->
-    <script src="bundle/bundle.js"></script>
+    <script src="js/bundle.js"></script>
     <script src="amorphic/client.js?ver=0"></script>
     <script src="modules/amorphic-bindster/index.js?ver=1"></script>
     <script src="modules/amorphic-bindster/router.js?ver=0"></script>
@@ -44,7 +44,22 @@
     <!--#include virtual="inc/mocha.html" -->
     <script src="modules/amorphic-bindster/bindster-amorphic.js"></script>
 
+    <!--Angular stuff-->
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfill -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
 
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/@angular/core/bundles/core.umd.js"></script>
+    <script src="node_modules/@angular/common/bundles/common.umd.js"></script>
+    <script src="node_modules/@angular/compiler/bundles/compiler.umd.js"></script>
+    <script src="node_modules/@angular/forms/bundles/forms.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
+
+    <!-- 2. Load our 'modules' -->
     <!--<script src="ng2/amorphic.service.js"></script>-->
     <!--<script src="ng2/menu.component.js"></script>-->
     <!--<script src="ng2/projects.component.js"></script>-->
@@ -56,8 +71,10 @@
     <!--<script src="ng2/tickets.component.js"></script>-->
     <!--<script src="ng2/client.module.js"></script>-->
 
-    <script src="bundle/vendor.js"></script>
-    <script src="bundle/client.js"></script>
+    <!--End Angular stuff-->
+    <script src="js/start.js"></script>
+    <!--<script src="bundle/vendor.js"></script>-->
+    <!--<script src="bundle/start.js"></script>-->
     <!--<script>-->
         <!--platformBrowserDynamic().bootstrapModule(AppModule);-->
     <!--</script>-->

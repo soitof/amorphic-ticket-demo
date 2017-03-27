@@ -1,11 +1,7 @@
-import {Supertype, supertypeClass, property, remote} from 'amorphic';
-import {BaseController} from '../js/baseController';
+import {Controller} from '../js/Controller';
 import {Component, OnInit} from '@angular/core';
 import {TicketItemComment} from '../js/tsmodel/ticketItemComment';
 import {Ticket} from '../js/tsmodel/ticket';
-import * as Q from 'Q';
-import * as _ from 'underscore';
-import {Person} from "../js/tsmodel/person";
 import {Project} from "../js/tsmodel/project";
 
 @Component({
@@ -64,7 +60,7 @@ import {Project} from "../js/tsmodel/project";
             <div class="col-md-4">
                 <select class="form-control" id="power" required
                         [(ngModel)]="ticket.project" (change)="if(!ticket.project){ticket.release=null}">
-                    <option *ngFor="let #pr of projectsGet()" [value]="pr">{{pr}}</option>
+                    <option *ngFor="let pr of projectsGet()" [value]="pr">{{pr}}</option>
                 </select>
             </div>
         </div>
@@ -76,7 +72,7 @@ import {Project} from "../js/tsmodel/project";
             <div class="pull-right">
                 <button (click)="addComment()" type="button" class="btn btn-primary btn-lg">Add Comment</button>
             </div>
-            <h1>Ticket Activity</h1></div>
+            <h1>Ticket Activity</h1>
         </div>
 
         <form class="form-horizontal" role="form">
@@ -126,6 +122,7 @@ import {Project} from "../js/tsmodel/project";
 export class TicketComponent implements OnInit {
 
     comment: string = '';
+    controller: Controller;
 
     ngOnInit(): void {
     }

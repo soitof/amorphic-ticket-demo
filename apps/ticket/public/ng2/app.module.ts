@@ -11,7 +11,7 @@ import {ProjectsComponent} from './projects.component';
 import {TicketComponent} from './ticket.component';
 import {TicketsComponent} from './tickets.component';
 
-import {Controller} from '../js/controller';
+//import {Controller} from '../js/controller';
 import {WindowService} from './window.service';
 
 @NgModule({
@@ -39,7 +39,7 @@ import {WindowService} from './window.service';
         ])
     ],
     declarations: [
-        Controller,
+        //Controller,
         Menu,
         TicketComponent,
         TicketsComponent,

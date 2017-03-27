@@ -3,26 +3,20 @@ var nodeExternals = require('webpack-node-externals');
 module.exports = {
     // Angular 2 stuff
     entry: {
-        //app: './apps/ticket/public/ng2/app.module.ts'
-        //app: './apps/ticket/public/ng2/app.module.ts',
-        client: './apps/ticket/public/ng2/client.module.ts'
-        //vendor: './bundle/vendor.ts',
+        //vendor: './bundle/vendor.ts'
+        start: './apps/ticket/public/ng2/start.module.ts'
         //bundle: './apps/ticket/public/js/index.ts'
     },
     // Amorphic
     //entry: './apps/ticket/public/js/index.ts',
     output: {
-        filename: '/[name].js',
-        //filename: '/bundle.js',
+        filename: '[name].js',
+        //filename: 'bundle.js',
         path: '/'
     },
     module: {
         rules: [
             // Angular 2 stuff
-            //{
-            //    test: /\.component|service|module\.tsx?$/,
-            //    loader: ['awesome-typescript-loader', 'angular2-template-loader']
-            //},
             {
                 test: /\.tsx?$/,
                 loader: ['awesome-typescript-loader', 'angular2-template-loader']

@@ -1,12 +1,5 @@
-import {Supertype, supertypeClass, property, remote} from 'amorphic';
-import {BaseController} from '../js/baseController';
 import {Component, OnInit} from '@angular/core';
-import {TicketItemComment} from '../js/tsmodel/ticketItemComment';
-import {Ticket} from '../js/tsmodel/ticket';
-import * as Q from 'Q';
-import * as _ from 'underscore';
 import {Person} from "../js/tsmodel/person";
-import {Project} from "../js/tsmodel/project";
 
 @Component({
     selector: 'menu',
